@@ -1,28 +1,26 @@
 <core:View xmlns:core="sap.ui.core" xmlns:mvc="sap.ui.core.mvc" xmlns="sap.m"
-		controllerName="realmz.ui5.controller.Realmz" xmlns:html="http://www.w3.org/1999/xhtml">
-	<Page title="Realmz - Kingdom Survival">
-		<Button text="Coming Soon"
-		press="onShowHello"
-		enabled="true" />		
-		
+		controllerName="realmz.ui5.controller.Realmz" xmlns:tnt="sap.tnt" xmlns:html="http://www.w3.org/1999/xhtml">
+	<Page title="Realmz">
+          <tnt:ToolHeader>
+    <core:Icon src="sap-icon://calendar" tooltip="Population"/>
+    <Text type="Date" text="01.01.1000"/>
+    <ToolbarSpacer />
+    <Button text="Alan Smith" type="Transparent" press="onUserNamePress">
+      <layoutData>
+        <OverflowToolbarLayoutData priority="NeverOverflow" />
+      </layoutData>
+    </Button>
+  </tnt:ToolHeader>	
 		<footer>
 			<OverflowToolbar id="realmzFooter">
-				<Label text="Population: "/>
+                <core:Icon src="sap-icon://family-care" tooltip="Population"/>
 				<Text type="Number" text="1000"/>
-				<Text type="Text" text=" | "/>
-				<Label text="Food: "/>
+				<core:Icon src="sap-icon://nutrition-activity" tooltip="Food"/>
 				<Text type="Number" text="500"/>
-				<Text type="Text" text=" | "/>
-				<Label text="Gold: "/>
+				<core:Icon src="sap-icon://lead" tooltip="Gold"/>
 				<Text type="Number" text="500"/>
-				<Text type="Text" text=" | "/>
-				<Label text="Peasants: "/>
-				<Text type="Number" text="800"/>
-				<Text type="Text" text=" | "/>
-				<Label text="Army: "/>
-				<Text type="Number" text="200"/>
 				<ToolbarSpacer />
-				<Button text="End Turn" icon="sap-icon://lateness" />
+				<Button text="End Turn" icon="sap-icon://lateness" press="onNextTurn"/>
 			</OverflowToolbar>
 		</footer>		
 	</Page>
