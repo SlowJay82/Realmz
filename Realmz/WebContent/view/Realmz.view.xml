@@ -10,7 +10,8 @@
     <tnt:ToolHeader>
       <ToolbarSpacer />
       <Button
-        text="Alan Smith"
+        id="player"
+        text="Unknown Player"
         type="Transparent"
         press="onUserNamePress"
       >
