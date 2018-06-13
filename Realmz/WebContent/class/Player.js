@@ -15,7 +15,7 @@ sap.ui.define([ "sap/ui/base/ManagedObject" ], function( ManagedObject )
 		generatePlayerName: function(gender) {
 		  var firstNameMale = ["Hagen", "Siegfried", "Leonardo", "Josef", "Pablo", "Kratos", "Harisson", "Mahatama", "Sun", "Kim", "Donald", "Vladimir","George","Özkan","Merlin","Daniel","Volker","Ernst","Adolf"];
 		  var firstNameFemale = ["Larissa", "Morgaine", "Elaine", "Katharina", "Elizabeth","Hannah", "Anna", "Leah","Donna","Bonnie"];
-		  var lastName = ["Forrester", "Stark", "Liedtke", "Bolton", "Holden","Trussler","Tune"];
+		  var lastName = ["Forrester", "Stark", "Liedtke", "Bolton", "Holden","Trussler","Tune","Dexter", "Williams","Evans","Simpson"];
 		  var gender = Math.random() >= 0.5;
 		  var name = lastName[Math.floor(Math.random()*lastName.length)];
 		  this.setLastName(name);

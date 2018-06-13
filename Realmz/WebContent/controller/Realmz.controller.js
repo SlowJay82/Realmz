@@ -30,9 +30,9 @@ sap.ui.define([
 	   },
 	   
 	   onAfterRendering : function() {
-	     MessageToast.show("Welcome to Realmz my Lord"); 
-	     setTimeout(MessageToast.show("Ruler "+player.getFirstName()+" "+player.getLastName()+" is now in charge of the kingdom!"), 3000);
-
+	     // Generate Player
+	     MessageToast.show("Ruler "+player.getFirstName()+" "+player.getLastName()+" is now in charge of the kingdom!");
+	     this.byId("player").setText(player.getFirstName()+" "+player.getLastName());
 	   },
   
      wakeup: function()
