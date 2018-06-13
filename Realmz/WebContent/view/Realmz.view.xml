@@ -23,9 +23,12 @@
       </Button>
     </tnt:ToolHeader>
     <!-- Stage -->
-    <Panel id="stage">
+    <Panel 
+    id="stage">
     <Image
-	  src="/map/map.jpg"
+	  src="img/map.jpg"
+      height="100%"
+      width="100%"
 	  press="handleImagePress" />
     </Panel>
     <!--  Stats Footer -->
