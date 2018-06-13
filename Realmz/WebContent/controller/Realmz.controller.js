@@ -6,34 +6,33 @@ sap.ui.define([
 ], function (Controller,MessageToast, Player, Kingdom) {
    "use strict";
    var player, kingdom, world;
+   var gameRunning = false;
+   var turn = 1;
+   var date = new Date('1000-01-01');
    
    return Controller.extend("realmz.ui5.controller.Realmz",
    {
-     
-	   onInit : function() {
+	     onInit : function() {
 	     player = new Player();
 	     kingdom = new Kingdom();
 	     player.generatePlayerName();
 	     kingdom.generateName();
 	     kingdom.setPlayer(player);
-	     
 	   },
 	   
 	   onNextTurn : function() {
-	     // Init Date
-	     if (!date) {
-	       var date = new Date('1000-01-01T00:00:00');
-	     }; 
-	     // Set day
-	     this.byId("date").setText(date);
-	     // Output
-	     MessageToast.show("A new day has begun!"); 
+	     // Set time
+	     turn += 1;
+	     this.byId("turn").setText(turn);
+	     // Output time
+	     MessageToast.show("Day " + turn + " has begun!");
+	     // Event
 	   },
 	   
 	   onAfterRendering : function() {
 	     MessageToast.show("Welcome to Realmz my Lord"); 
-	     setTimeout(MessageToast.show("Ruler "+player.getFirstName()+" "+player.getLastName()+" is now Ruling!"), 3000);
-	     
+	     setTimeout(MessageToast.show("Ruler "+player.getFirstName()+" "+player.getLastName()+" is now in charge of the kingdom!"), 3000);
+
 	   },
   
      wakeup: function()
