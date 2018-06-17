@@ -1,4 +1,7 @@
-sap.ui.define([ "sap/ui/base/ManagedObject" ], function( ManagedObject )
+sap.ui.define([
+  "sap/ui/base/ManagedObject",
+  "sap/ui/model/json/JSONModel"
+], function( ManagedObject, JSONModel )
 {
   return ManagedObject.extend( "realmz.Kingdom",
   {
@@ -12,10 +15,21 @@ sap.ui.define([ "sap/ui/base/ManagedObject" ], function( ManagedObject )
         // Adjustable jobs
         peasant: {type: "int", defaultValue: 500},
         soldier: {type: "int", defaultValue: 100},
-        scientist: {type: "int", defaultValue: 150},
+        scientist: {type: "int", defaultValue: 150, bindable: true},
         merchant: {type: "int", defaultValue: 150},
         intelligence: {type: "int", defaultValue: 100}
       }
+    },
+    
+    init: function()
+    {
+      this.model = new JSONModel({});
+    },
+    
+    setProperty: function( key, value )
+    {
+      ManagedObject.prototype.setProperty.apply( this, arguments );
+      this.model.setProperty( '/' + key, value );
     },
     
     generateName: function() {

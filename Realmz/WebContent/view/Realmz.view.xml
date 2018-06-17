@@ -79,7 +79,7 @@
           tooltip="Science" />
         <Text
           type="Number"
-          text="0" />
+          text="{kingdom>/scientist}" />
         <core:Icon
           src="sap-icon://search"
           tooltip="Intelligence" />

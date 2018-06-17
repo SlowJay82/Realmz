@@ -1,6 +1,12 @@
-sap.ui.define([ "sap/ui/base/ManagedObject" ], function( ManagedObject )
+sap.ui.define([ "./Personality", "./Random" ], function( Personality, Random )
 {
-	return ManagedObject.extend( "realmz.Player",
+  var firstNameMale = ["Sid","Jonny","Hagen", "Siegfried", "Leonardo", "Josef", "Pablo", "Kratos", "Harisson", "Mahatama", "Sun", "Kim", "Donald", "Vladimir","George","Özkan","Merlin","Daniel","Volker","Ernst","Adolf"];
+  var firstNameFemale = ["Larissa", "Morgaine", "Elaine", "Katharina", "Elizabeth","Hannah", "Anna", "Leah","Donna","Bonnie"];
+  var lastName = ["Vicious","Rotten","Forrester", "Stark", "Liedtke", "Bolton", "Holden","Trussler","Tune","Dexter", "Williams","Evans","Simpson"];
+  var rand = new Random();
+  
+  
+	return Personality.extend( "realmz.Player",
 	{
 		metadata: {
 			properties: {
@@ -13,22 +19,12 @@ sap.ui.define([ "sap/ui/base/ManagedObject" ], function( ManagedObject )
 		},
 		
 		generatePlayerName: function(gender) {
-		  var firstNameMale = ["Sid","Jonny","Hagen", "Siegfried", "Leonardo", "Josef", "Pablo", "Kratos", "Harisson", "Mahatama", "Sun", "Kim", "Donald", "Vladimir","George","Özkan","Merlin","Daniel","Volker","Ernst","Adolf"];
-		  var firstNameFemale = ["Larissa", "Morgaine", "Elaine", "Katharina", "Elizabeth","Hannah", "Anna", "Leah","Donna","Bonnie"];
-		  var lastName = ["Vicious","Rotten","Forrester", "Stark", "Liedtke", "Bolton", "Holden","Trussler","Tune","Dexter", "Williams","Evans","Simpson"];
-		  var gender = Math.random() >= 0.5;
-		  var name = lastName[Math.floor(Math.random()*lastName.length)];
-		  this.setLastName(name);
-		  if (gender == true) {
-		    var firstName = firstNameMale[Math.floor(Math.random()*firstNameMale.length)];
-		    this.setFirstName(firstName);
-		  }
-		  
-		  if (gender == false) {
-		    var firstName = firstNameFemale[Math.floor(Math.random()*firstNameFemale.length)];
-        this.setFirstName(firstName);
-		  }
-		  
+		  gender = gender || rand.nextElementOf(["male","female"]);
+		  this.setLastName( rand.nextElementOf(lastName) );
+		  this.setFirstName( gender === "male" ?
+		    rand.nextElementOf(firstNameMale) :
+		    rand.nextElementOf(firstNameFemale)
+		  );
 		},
 		
 		damage: function( amount )
