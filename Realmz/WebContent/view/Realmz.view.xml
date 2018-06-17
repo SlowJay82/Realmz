@@ -9,6 +9,21 @@
   <Page title="Realmz">
   <!-- Stats Bar -->
     <tnt:ToolHeader>
+      <Button
+        text="Economy"
+        type="Transparent"
+        press=""
+      />
+      <Button
+        text="Warfare"
+        type="Transparent"
+        press=""
+      />
+      <Button
+        text="Warfare"
+        type="Transparent"
+        press=""
+      />
       <ToolbarSpacer />
       <Button
         id="player"
@@ -28,7 +43,7 @@
     <Image
 	  src="img/map.jpg"
       height="100%"
-      width="100%"
+      width="86%"
 	  press="handleImagePress" />
     </Panel>
     <!--  Stats Footer -->

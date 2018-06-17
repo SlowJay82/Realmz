@@ -2,10 +2,11 @@ sap.ui.define([
    "sap/ui/core/mvc/Controller",
    "sap/m/MessageToast",
    "realmz/Player",
-   "realmz/Kingdom"
-], function (Controller,MessageToast, Player, Kingdom) {
+   "realmz/Kingdom",
+   "realmz/Event"
+], function (Controller,MessageToast, Player, Kingdom, Event) {
    "use strict";
-   var player, kingdom, world;
+   var player, kingdom, event, world;
    var gameRunning = false;
    var turn = 1;
    var date = new Date('1000-01-01');
@@ -15,6 +16,7 @@ sap.ui.define([
 	     onInit : function() {
 	     player = new Player();
 	     kingdom = new Kingdom();
+	     event = new Event();
 	     player.generatePlayerName();
 	     kingdom.generateName();
 	     kingdom.setPlayer(player);
