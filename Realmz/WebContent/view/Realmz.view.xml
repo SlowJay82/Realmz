@@ -20,7 +20,12 @@
         press=""
       />
       <Button
-        text="Warfare"
+        text="Science"
+        type="Transparent"
+        press=""
+      />
+      <Button
+        text="Espionage"
         type="Transparent"
         press=""
       />
