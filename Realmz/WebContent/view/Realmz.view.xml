@@ -61,19 +61,19 @@
           tooltip="Population" />
         <Text
           type="Number"
-          text="1000" />
+          text="{kingdom>/population}" />
         <core:Icon
           src="sap-icon://nutrition-activity"
           tooltip="Food" />
         <Text
           type="Number"
-          text="500" />
+          text="{kingdom>/food}" />
         <core:Icon
           src="sap-icon://lead"
           tooltip="Gold" />
         <Text
           type="Number"
-          text="500" />
+          text="{kingdom>/gold}" />
         <core:Icon
           src="sap-icon://lab"
           tooltip="Science" />
@@ -85,7 +85,7 @@
           tooltip="Intelligence" />
         <Text
           type="Number"
-          text="0" />
+          text="{kingdom>/intel}" />
         <ToolbarSpacer />
         <core:Icon
           src="sap-icon://calendar"
