@@ -49,8 +49,6 @@ sap.ui.define([
         }
       }).join('');
     }
-    
-    
   })
   
   return Random;

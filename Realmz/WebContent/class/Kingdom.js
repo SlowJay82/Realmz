@@ -29,7 +29,7 @@ sap.ui.define([
       var income = this.getPeasant;
       var needs = (this.getPopulation * 0.5);
       var outcome = income - needs;
-      this.setFood(this.getFood + outcome)
+      this.setFood(this.getFood += outcome)
     },
     
     init: function()
@@ -47,11 +47,6 @@ sap.ui.define([
       var nameArray = ["Middle Earth", "Eden", "Wessex"];
       var name = nameArray[Math.floor(Math.random()*nameArray.length)] 
       this.setName(name);
-    },
-    
-    damage: function( amount )
-    {
-      this.setHealth( this.getHealth() - amount );
     }
     
   });
