@@ -45,11 +45,6 @@
     <!-- Stage -->
     <Panel 
     id="stage">
-    <Image
-	  src="img/map.jpg"
-      height="100%"
-      width="86%"
-	  press="handleImagePress" />
     </Panel>
     <!--  Stats Footer -->
     <footer>
