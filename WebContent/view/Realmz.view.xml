@@ -42,10 +42,6 @@
         </layoutData>
       </Button>
     </tnt:ToolHeader>
-    <!-- Stage -->
-    <Panel 
-    id="stage">
-    </Panel>
     <!--  Stats Footer -->
     <footer>
       <OverflowToolbar
