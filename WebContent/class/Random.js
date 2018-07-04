@@ -1,6 +1,6 @@
 sap.ui.define([
   'sap/ui/base/ManagedObject'
-], function( Base )
+], function( ManagedObject )
 {
   var Random = ManagedObject.extend("realmz.Random",
   {
