@@ -8,15 +8,13 @@ sap.ui.define([ "sap/ui/base/ManagedObject",
       }
     },
     
-    throwRandomInt(max) {
-      var rnd= Math.floor((Math.random() * max) + 1);
-      alert(rnd);
-    },
-    
-    handleEvent: function(kingdom) {
-        var rnd = this.throwRandomInt(100);
+    sample: function()
+    {
+     
       }
-  });
+     
+    }
+  );
   
   
 });
