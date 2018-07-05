@@ -35,6 +35,7 @@ sap.ui.define([
     init: function()
     {
       this.model = new JSONModel({});
+      Object.entries( this.getMetadata().getProperties() ).forEach(([ key, value ]) => value.defaultValue !== undefined && this.setProperty( key, value.defaultValue ) );
     },
     
     setProperty: function( key, value )

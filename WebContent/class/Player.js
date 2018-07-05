@@ -1,8 +1,8 @@
 sap.ui.define([ "./Personality", "./Random" ], function( Personality, Random )
 {
-  var firstNameMale = ["Sid","Jonny","Hagen", "Siegfried", "Leonardo", "Josef", "Pablo", "Kratos", "Harisson", "Mahatama", "Sun", "Kim", "Donald", "Vladimir","George","Özkan","Merlin","Daniel","Volker","Ernst","Adolf"];
+  var firstNameMale = ["Sid","Johnny","Hagen", "Siegfried", "Leonardo", "Josef", "Pablo", "Kratos", "Harisson", "Mahatama", "Sun", "Kim", "Donald", "Vladimir","George","Özkan","Merlin","Daniel","Volker","Ernst","Adolf"];
   var firstNameFemale = ["Larissa", "Morgaine", "Elaine", "Katharina", "Elizabeth","Hannah", "Anna", "Leah","Donna","Bonnie"];
-  var lastName = ["Vicious","Rotten","Forrester", "Stark", "Liedtke", "Bolton", "Holden","Trussler","Tune","Dexter", "Williams","Evans","Simpson"];
+  var lastName = ["Hetler","Vicious","Rotten","Forrester", "Stark", "Liedtke", "Bolton", "Holden","Trussler","Tune","Dexter", "Williams","Evans","Simpson"];
   var rand = new Random();
   
   
