@@ -44,20 +44,24 @@ sap.ui.define([
 	     this.byId("player").setText(player.getFirstName()+" "+player.getLastName());
 	   },
 	   
+	   onAgriculturePress : function() {
+	     MessageToast.show("Peasants: " + kingdom.getPeasant() + " / " + kingdom.getPopulation());
+	   },
+	   
 	   onEconomyPress : function() {
-	     MessageToast.show("Merchants: " + kingdom.getMerchant());
+	     MessageToast.show("Merchants: " + kingdom.getMerchant() + " / " + kingdom.getPopulation());
 	   },
 	   
 	   onWarfarePress : function() {
-	     MessageToast.show("Soldiers: " + kingdom.getSoldier());
+	     MessageToast.show("Soldiers: " + kingdom.getSoldier() + " / " + kingdom.getPopulation());
 	   },
   
 	   onSciencePress : function() {
-	     MessageToast.show("Scientists: " + kingdom.getScientist());
+	     MessageToast.show("Scientists: " + kingdom.getScientist() + " / " + kingdom.getPopulation());
 	   },
 	   
 	   onEspionagePress : function() {
-	     MessageToast.show("Agents: " + kingdom.getSpy());
+	     MessageToast.show("Agents: " + kingdom.getSpy() + " / " + kingdom.getPopulation());
 	   },
 	   
      wakeup: function()

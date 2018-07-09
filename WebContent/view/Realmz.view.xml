@@ -10,6 +10,11 @@
   <!-- Stats Bar -->
     <tnt:ToolHeader>
       <Button
+        text="Agriculture"
+        type="Transparent"
+        press="onAgriculturePress"
+      />
+      <Button
         text="Economy"
         type="Transparent"
         press="onEconomyPress"
