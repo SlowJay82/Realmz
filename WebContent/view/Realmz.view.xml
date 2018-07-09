@@ -12,22 +12,22 @@
       <Button
         text="Economy"
         type="Transparent"
-        press=""
+        press="onEconomyPress"
       />
       <Button
         text="Warfare"
         type="Transparent"
-        press=""
+        press="onWarfarePress"
       />
       <Button
         text="Science"
         type="Transparent"
-        press=""
+        press="onSciencePress"
       />
       <Button
         text="Espionage"
         type="Transparent"
-        press=""
+        press="onEspionagePress"
       />
       <ToolbarSpacer />
       <Button

@@ -43,7 +43,23 @@ sap.ui.define([
 	     MessageToast.show("Ruler "+player.getFirstName()+" "+player.getLastName()+" is now in charge of the kingdom!");
 	     this.byId("player").setText(player.getFirstName()+" "+player.getLastName());
 	   },
+	   
+	   onEconomyPress : function() {
+	     MessageToast.show("Merchants: " + kingdom.getMerchant());
+	   },
+	   
+	   onWarfarePress : function() {
+	     MessageToast.show("Soldiers: " + kingdom.getSoldier());
+	   },
   
+	   onSciencePress : function() {
+	     MessageToast.show("Scientists: " + kingdom.getScientist());
+	   },
+	   
+	   onEspionagePress : function() {
+	     MessageToast.show("Agents: " + kingdom.getSpy());
+	   },
+	   
      wakeup: function()
      {
        
