@@ -1,7 +1,9 @@
 sap.ui.define([
   "sap/ui/base/ManagedObject",
-  "sap/ui/model/json/JSONModel"
-], function( ManagedObject, JSONModel )
+  "sap/ui/model/json/JSONModel",
+  "./Random",
+  "sap/m/MessageBox"
+], function( ManagedObject, JSONModel, Random, MessageBox )
 {
   return ManagedObject.extend( "realmz.Kingdom",
   {
@@ -25,20 +27,38 @@ sap.ui.define([
       }
     },
     
+    onNextTurn: function() {
+      this.manageFood();
+    },
+    
     manageFood: function() {
-      var income = this.getPeasant;
-      var needs = (this.getPopulation * 0.5);
-      var outcome = income - needs;
-      this.setFood(this.getFood += outcome)
+      var income = this.getPeasant();
+      var needs = (this.getPopulation() * 0.5);
+      //var outcome = income - needs;
+      var outcome = 0;
+      MessageBox.information("Todays food income was " + outcome + " units.");
+      this.setFood(this.getFood() + outcome);
+      if (this.getFood() == 0) {
+        this.starve();
+      }
     },
     
     substractFood: function(amount) {
       if (amount > this.getFood()) {
         this.setFood(0);
+        this.starve();
       }
       else {
         this.setFood(this.getFood() - amount)
       }
+    },
+    
+    starve: function() {
+      var rnd = new Random();
+      var maxDeaths = parseInt(this.getPopulation() * 0.1);
+      var deaths = rnd.nextInt(1, maxDeaths);
+      this.setPopulation(this.getPopulation() - deaths);
+      MessageBox.error("Your kingdom is hungry your greatness!" + "\n" + deaths + " people have starved to death.");
     },
     
     init: function()

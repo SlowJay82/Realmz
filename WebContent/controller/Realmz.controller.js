@@ -34,6 +34,7 @@ sap.ui.define([
 	     // Output time
 	     MessageToast.show("Day " + turn + " has begun!");
 	     // Event
+	     kingdom.onNextTurn();
 	     event.randomEvents(kingdom);
 	   },
 	   
