@@ -32,6 +32,15 @@ sap.ui.define([
       this.setFood(this.getFood += outcome)
     },
     
+    substractFood: function(amount) {
+      if (amount > this.getFood()) {
+        this.setFood(0);
+      }
+      else {
+        this.setFood(this.getFood() - amount)
+      }
+    },
+    
     init: function()
     {
       this.model = new JSONModel({});
