@@ -4,8 +4,9 @@ sap.ui.define([
    "realmz/Player",
    "realmz/Kingdom",
    "realmz/Event",
-   "sap/ui/model/json/JSONModel"
-], function (Controller,MessageToast, Player, Kingdom, Event, JSONModel ) {
+   "sap/ui/model/json/JSONModel",
+   "sap/m/MessageBox"
+], function (Controller,MessageToast, Player, Kingdom, Event, JSONModel, MessageBox ) {
    "use strict";
    var player, kingdom, event, world;
    var gameRunning = false;
@@ -16,12 +17,11 @@ sap.ui.define([
    {
 	   onInit : function() {
 	     var model = new JSONModel({ kingdom: {} });
-	     
+       event = new Event();
 	     player = new Player();
 	     player.setModel( model );
 	     kingdom = new Kingdom();
        this.getView().setModel( kingdom.model, 'kingdom' );
-	     event = new Event();
 	     player.generatePlayerName();
 	     kingdom.generateName();
 	     kingdom.setPlayer(player);
@@ -34,6 +34,7 @@ sap.ui.define([
 	     // Output time
 	     MessageToast.show("Day " + turn + " has begun!");
 	     // Event
+	     event.randomEvents(kingdom);
 	   },
 	   
 	   onAfterRendering : function() {
