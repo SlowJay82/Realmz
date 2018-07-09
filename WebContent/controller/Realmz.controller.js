@@ -32,7 +32,7 @@ sap.ui.define([
 	     turn += 1;
 	     this.byId("turn").setText(turn);
 	     // Output time
-	     MessageToast.show("Day " + turn + " has begun!");
+	     MessageBox.information("Day " + turn + " has begun!");
 	     // Event
 	     kingdom.onNextTurn();
 	     event.randomEvents(kingdom);
