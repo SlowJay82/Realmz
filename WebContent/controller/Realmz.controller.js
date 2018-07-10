@@ -29,15 +29,16 @@ sap.ui.define([
 	     kingdom.setPlayer(player);
 	     this.messageManager = new MessageManager();
 	     this.getView().setModel( this.messageManager.getMessageModel(), 'Messages' );
-	     this.logMessage("Information", "Game started", "The game has started");
+
 	   },
 	   
 	   onNextTurn : function() {
+	     var sTurn = "Day " + turn;
+       this.logMessage("Information", sTurn, "The game has started");
 	     // Set time
 	     turn += 1;
 	     this.byId("turn").setText(turn);
 	     // Output time
-	     MessageBox.information("Day " + turn + " has begun!");
 	     // Event
 	     kingdom.onNextTurn();
 	     event.randomEvents(kingdom);
