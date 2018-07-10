@@ -47,6 +47,17 @@
         </layoutData>
       </Button>
     </tnt:ToolHeader>
+    
+    <List class="sapUiSizeCompact" items="{Messages>/}">
+      <StandardListItem
+        title="{Messages>message}"
+        description="{Messages>description}"
+        infoState="{Messages>type}"
+        icon="{Messages>icon}"
+      />
+    </List>
+    
+    
     <!--  Stats Footer -->
     <footer>
       <OverflowToolbar

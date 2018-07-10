@@ -34,7 +34,7 @@ sap.ui.define([
     manageFood: function() {
       var income = this.getPeasant();
       var needs = (this.getPopulation() * 0.5);
-      //var outcome = income - needs;
+      // var outcome = income - needs;
       var outcome = 0;
       MessageBox.information("Todays food income was " + outcome + " units.");
       this.setFood(this.getFood() + outcome);
@@ -55,7 +55,7 @@ sap.ui.define([
     
     starve: function() {
       var rnd = new Random();
-      var maxDeaths = parseInt(this.getPopulation() * 0.1);
+      var maxDeaths = this.getPopulation() * .1;
       var deaths = rnd.nextInt(1, maxDeaths);
       this.setPopulation(this.getPopulation() - deaths);
       MessageBox.error("Your kingdom is hungry your greatness!" + "\n" + deaths + " people have starved to death.");

@@ -5,8 +5,10 @@ sap.ui.define([
    "realmz/Kingdom",
    "realmz/Event",
    "sap/ui/model/json/JSONModel",
-   "sap/m/MessageBox"
-], function (Controller,MessageToast, Player, Kingdom, Event, JSONModel, MessageBox ) {
+   "sap/m/MessageBox",
+   "sap/ui/core/message/MessageManager",
+   "sap/ui/core/message/Message"
+], function (Controller,MessageToast, Player, Kingdom, Event, JSONModel, MessageBox, MessageManager, Message ) {
    "use strict";
    var player, kingdom, event, world;
    var gameRunning = false;
@@ -25,6 +27,9 @@ sap.ui.define([
 	     player.generatePlayerName();
 	     kingdom.generateName();
 	     kingdom.setPlayer(player);
+	     this.messageManager = new MessageManager();
+	     this.getView().setModel( this.messageManager.getMessageModel(), 'Messages' );
+	     this.logMessage("Information", "Game started", "The game has started");
 	   },
 	   
 	   onNextTurn : function() {
@@ -67,6 +72,21 @@ sap.ui.define([
      wakeup: function()
      {
        
+     },
+     
+     logMessage: function( type, message, desc, toast, box )
+     {
+       if ( toast )
+         MessageToast.show( message );
+       if ( box )
+         MessageBox[ type.toLowerCase() ]( message );
+       console.log( message );
+       this.messageManager.addMessages( new Message({
+         type: type === 'Information' ? 'None' : type,
+         message: message,
+         description: desc
+       }) );
+       return this;
      }
      
    });

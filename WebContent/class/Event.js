@@ -19,7 +19,7 @@ sap.ui.define([ "sap/ui/base/ManagedObject", "./Random", "sap/m/MessageBox" ], f
 
     randomEventPlague : function(kingdom) {
       
-      var plagues = [ "frogs", "lices", "fleas","rats","termites","Hippies","pigeons" ];
+      var plagues = [ "frogs", "lice", "fleas","rats","termites","Hippies","pigeons","cockroaches" ];
       var rnd = new Random();
       var res = rnd.nextInt(0, 100);
       if (res > 50) {
