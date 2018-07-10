@@ -36,11 +36,13 @@ sap.ui.define([
       var needs = (this.getPopulation() * 0.5);
       // var outcome = income - needs;
       var outcome = 0;
-      MessageBox.information("Todays food income was " + outcome + " units.");
+      //MessageBox.information("Todays food income was " + outcome + " units.");
       this.setFood(this.getFood() + outcome);
       if (this.getFood() == 0) {
         this.starve();
       }
+      //returnMessage = "Todays food income was " + outcome + " units.";
+      //return ["Warning", "dayPlaceholder" , returnMessage];
     },
     
     substractFood: function(amount) {

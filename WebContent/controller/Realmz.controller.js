@@ -33,12 +33,12 @@ sap.ui.define([
 	   },
 	   
 	   onNextTurn : function() {
-	     var sTurn = "Day " + turn;
-       this.logMessage("Information", sTurn, "The game has started");
 	     // Set time
-	     turn += 1;
-	     this.byId("turn").setText(turn);
-	     // Output time
+       turn += 1;
+       this.byId("turn").setText(turn)
+	     var sTurn = "Day " + turn;
+       // Output time
+       this.logMessage("Information", sTurn, "The game has started");
 	     // Event
 	     kingdom.onNextTurn();
 	     event.randomEvents(kingdom);
