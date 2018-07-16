@@ -9,6 +9,7 @@ sap.ui.define([
   {
     metadata: {
       properties: {
+        game: { type: "Realmz.Game" },
         player: {type: "Realmz.Player"},
         name:  { type: "string", defaultValue: "Unknown Kingdom" },
         population:   { type:"int", defaultValue: 1000},

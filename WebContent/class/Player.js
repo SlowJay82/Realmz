@@ -14,7 +14,8 @@ sap.ui.define([ "./Personality", "./Random" ], function( Personality, Random )
 				lastName:   { type:"string", defaultValue: ""},
 				gender: {type:"boolean", defaultValue: false},
 				score:      { type: "int",    defaultValue: 0       },
-				world:      { type: "realmz.World" }
+				world:      { type: "realmz.World" },
+				game:       { type: "realmz.Game" }
 			}
 		},
 		

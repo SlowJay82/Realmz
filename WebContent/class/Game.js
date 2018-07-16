@@ -24,26 +24,26 @@ sap.ui.define([
     return ManagedObject.extend("realmz.Game", {
     metadata : {
       properties : {
-        running: {type: "boolean", defaultValue: false},
-        kingdom: {type: "Realmz.Kingdom"},
-        player: {type: "Realmz.Player"},
-        text:  { type: "string", defaultValue: "Unknown Text" },
-        turn:   { type:"int", defaultValue: 0},
+        running:  { type: "boolean",        defaultValue: false                   },
+        kingdom:  { type: "Realmz.Kingdom", defaultValue: new Kingdom()           },
+        player:   { type: "Realmz.Player",  defaultValue: new Player()            },
+        text:     { type: "string",         defaultValue: "Unknown Text"          },
+        turn:     { type: "int",            defaultValue: 0                       },
+        date:     { type: "date",           defaultValue: new Date('1000-01-01')  },
+        messageManager: { type: "sap/ui/core/message/MessageManager", defaultValue: new MessageManager() }
       }
     },
     
     onInit : function() {
-      var model = new JSONModel({ kingdom: {} });
+      //var model = new JSONModel({ kingdom: {} });
       event = new Event();
-      player = new Player();
-      player.setModel( model );
-      kingdom = new Kingdom();
-      this.getView().setModel( kingdom.model, 'kingdom' );
+      //player.setModel( model );
+      //this.getView().setModel( kingdom.model, 'kingdom' );
+      player.setGame( this );
       player.generatePlayerName();
       kingdom.generateName();
       kingdom.setPlayer(player);
-      this.messageManager = new MessageManager();
-      this.getView().setModel( this.messageManager.getMessageModel(), 'Messages' );
+      //this.getView().setModel( this.getMessageManager().getMessageModel(), 'Messages' );
     },
     
     onNextTurn : function() {

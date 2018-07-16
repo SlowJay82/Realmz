@@ -23,7 +23,7 @@ sap.ui.define([ "sap/ui/base/ManagedObject", "./Random", "sap/m/MessageBox" ], f
       var rnd = new Random();
       var res = rnd.nextInt(0, 100);
       if (res > 50) {
-        var type = plagues[rnd.nextInt(0,plagues.length)];
+        var type = rnd.nextElementOf(plagues);
         var maxLosses = parseInt(kingdom.getFood());
         var losses = rnd.nextInt(1, maxLosses);
         if (losses == 0) {

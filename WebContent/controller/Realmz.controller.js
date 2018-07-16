@@ -23,6 +23,7 @@ sap.ui.define([
 	     player = new Player();
 	     player.setModel( model );
 	     kingdom = new Kingdom();
+	     // Game Klasse erstellen und als Property in anderen Klassen mitgeben und im Gamecontroller einbauen
        this.getView().setModel( kingdom.model, 'kingdom' );
 	     player.generatePlayerName();
 	     kingdom.generateName();
@@ -36,9 +37,9 @@ sap.ui.define([
 	     // Set time
        turn += 1;
        this.byId("turn").setText(turn)
-	     var sTurn = "Day " + turn;
+	     var sTurn = `Day ${turn}`;
        // Output time
-       this.logMessage("Information", sTurn, "The game has started");
+       this.logMessage("Information", `Day ${turn}`, "The game has started");
 	     // Event
 	     kingdom.onNextTurn();
 	     event.randomEvents(kingdom);
